@@ -36,10 +36,12 @@ final OKHTTP3_VERSION = '3.3.1'
 final RXLIFECYCLE_VERSION = '0.6.1'
 
 dependencies {
+    kapt 'com.android.databinding:compiler:2.1.2'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile "com.android.support:appcompat-v7:${SUPPORT_LIBRARY_VERSION}"
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile "com.android.support:support-v4:${SUPPORT_LIBRARY_VERSION}"
 
     compile "com.android.support:design:${SUPPORT_LIBRARY_VERSION}"
@@ -59,3 +61,8 @@ dependencies {
     compile "com.trello:rxlifecycle-components:${RXLIFECYCLE_VERSION}"
     compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
 }
+
+kapt {
+    generateStubs = true
+}
+
